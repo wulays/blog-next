@@ -20,7 +20,7 @@ export default function RootLayout({
         <html lang="en">
         <body className={inter.className}>
         <MainNav/>
-        <main className="h-[calc(100vh-128px)] overflow-x-hidden bg-blue-50">
+        <main className="h-[calc(100vh-128px)] overflow-x-hidden bg-blue-50 dark:bg-zinc-900">
             {children}
         </main>
         <MainFooter />

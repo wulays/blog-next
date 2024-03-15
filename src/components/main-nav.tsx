@@ -46,7 +46,9 @@ export default function MainNav() {
             </NavbarContent>
             <NavbarContent justify="start">
                 <NavbarBrand className="mr-4">
-                    <p className="font-bold text-inherit">WULAYS</p>
+                    <Link href="/">
+                        <p className="font-bold text-inherit">WULAYS</p>
+                    </Link>
                 </NavbarBrand>
                 <NavbarContent className="gap-3">
                     {
@@ -62,7 +64,13 @@ export default function MainNav() {
                     }
                     <NavbarItem className="hidden sm:list-item">
                         <Switch
-                            defaultSelected
+                            onChange={ev => {
+                                if (ev.target.checked) {
+                                    document.documentElement.setAttribute('class', 'dark')
+                                } else {
+                                    document.documentElement.removeAttribute('class')
+                                }
+                            }}
                             checked={false}
                             color="warning"
                             thumbIcon={({ isSelected, className }) =>
